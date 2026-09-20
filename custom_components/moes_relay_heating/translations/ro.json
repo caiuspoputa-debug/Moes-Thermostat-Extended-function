@@ -1,0 +1,36 @@
+{
+  "title": "Moes Relay Heating",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Adaugă zonă de încălzire",
+        "description": "Alege termostatul climate și releul care alimentează valva de încălzire.",
+        "data": {
+          "zone_name": "Nume zonă",
+          "thermostat": "Termostat",
+          "relay": "Releu",
+          "hysteresis": "Histerezis pornire"
+        },
+        "data_description": {
+          "hysteresis": "Releul pornește când temperatura curentă ajunge la TARGET minus această valoare. Se oprește când temperatura curentă ajunge la TARGET."
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Acest termostat este deja configurat."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Modifică zona de încălzire",
+        "data": {
+          "zone_name": "Nume zonă",
+          "thermostat": "Termostat",
+          "relay": "Releu",
+          "hysteresis": "Histerezis pornire"
+        }
+      }
+    }
+  }
+}

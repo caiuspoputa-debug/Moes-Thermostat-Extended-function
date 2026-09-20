@@ -1,0 +1,36 @@
+{
+  "title": "Moes Relay Heating",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add heating zone",
+        "description": "Select the climate thermostat and the relay that powers the heating valve.",
+        "data": {
+          "zone_name": "Zone name",
+          "thermostat": "Thermostat",
+          "relay": "Relay",
+          "hysteresis": "Start hysteresis"
+        },
+        "data_description": {
+          "hysteresis": "Relay turns ON when current temperature is target minus this value. Relay turns OFF when target temperature is reached."
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This thermostat is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Edit heating zone",
+        "data": {
+          "zone_name": "Zone name",
+          "thermostat": "Thermostat",
+          "relay": "Relay",
+          "hysteresis": "Start hysteresis"
+        }
+      }
+    }
+  }
+}
