@@ -1,7 +1,7 @@
 {
   "domain": "moes_relay_heating",
   "name": "Moes Relay Heating",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "config_flow": true,
   "documentation": "https://github.com/caiuspoputa-debug/Moes-Relay-Heating",
   "issue_tracker": "https://github.com/caiuspoputa-debug/Moes-Relay-Heating/issues",

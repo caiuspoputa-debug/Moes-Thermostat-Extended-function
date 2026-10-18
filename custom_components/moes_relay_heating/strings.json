@@ -4,15 +4,14 @@
     "step": {
       "user": {
         "title": "Add heating zone",
-        "description": "Select the climate thermostat and the relay that powers the heating valve.",
+        "description": "Select the climate thermostat used to report heating demand. Control the heating switch with your own automations.",
         "data": {
           "zone_name": "Zone name",
           "thermostat": "Thermostat",
-          "relay": "Relay",
           "hysteresis": "Start hysteresis"
         },
         "data_description": {
-          "hysteresis": "Relay turns ON when current temperature is target minus this value. Relay turns OFF when target temperature is reached."
+          "hysteresis": "Heating demand turns ON when current temperature is target minus this value. It turns OFF when target temperature is reached."
         }
       }
     },
@@ -27,7 +26,6 @@
         "data": {
           "zone_name": "Zone name",
           "thermostat": "Thermostat",
-          "relay": "Relay",
           "hysteresis": "Start hysteresis"
         }
       }

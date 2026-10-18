@@ -1,0 +1,9 @@
+Moes Relay Heating 0.0.2 - INTEGRATION ONLY
+16 local behavioral tests passed; 0 failures, 0 errors, 0 skipped.
+Entity name, unique ID and DeviceInfo preserved from 0.0.1.
+Demand calculation method is unchanged; storage identity and lifecycle unchanged.
+Both configuration forms have only zone name, thermostat and hysteresis.
+No relay state reads, relay subscriptions or relay service calls.
+Legacy relay settings are ignored without recreating existing config entries.
+Python/JSON syntax and all release-archive hashes verified.
+Simulated Home Assistant only; not installed or tested on a live HA system.

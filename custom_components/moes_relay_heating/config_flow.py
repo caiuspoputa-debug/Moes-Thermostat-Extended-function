@@ -12,7 +12,6 @@ from homeassistant.helpers import selector
 
 from .const import (
     CONF_HYSTERESIS,
-    CONF_RELAY,
     CONF_THERMOSTAT,
     CONF_ZONE_NAME,
     DEFAULT_HYSTERESIS,
@@ -28,12 +27,6 @@ def _schema(defaults: dict[str, Any] | None = None) -> vol.Schema:
         if defaults.get(CONF_THERMOSTAT)
         else vol.Required(CONF_THERMOSTAT)
     )
-    relay_key = (
-        vol.Required(CONF_RELAY, default=defaults[CONF_RELAY])
-        if defaults.get(CONF_RELAY)
-        else vol.Required(CONF_RELAY)
-    )
-
     return vol.Schema(
         {
             vol.Required(
@@ -42,9 +35,6 @@ def _schema(defaults: dict[str, Any] | None = None) -> vol.Schema:
             ): selector.TextSelector(),
             thermostat_key: selector.EntitySelector(
                 selector.EntitySelectorConfig(domain="climate", multiple=False)
-            ),
-            relay_key: selector.EntitySelector(
-                selector.EntitySelectorConfig(domain="switch", multiple=False)
             ),
             vol.Required(
                 CONF_HYSTERESIS,
@@ -62,6 +52,14 @@ def _schema(defaults: dict[str, Any] | None = None) -> vol.Schema:
     )
 
 
+def _supported_data(user_input: dict[str, Any]) -> dict[str, Any]:
+    """Save only zone inputs; ignore relay fields from legacy clients."""
+    return {
+        key: user_input[key]
+        for key in (CONF_ZONE_NAME, CONF_THERMOSTAT, CONF_HYSTERESIS)
+    }
+
+
 class MoesRelayHeatingConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Handle config flow."""
 
@@ -75,7 +73,7 @@ class MoesRelayHeatingConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             self._abort_if_unique_id_configured()
 
             title = user_input[CONF_ZONE_NAME].strip() or thermostat
-            return self.async_create_entry(title=title, data=user_input)
+            return self.async_create_entry(title=title, data=_supported_data(user_input))
 
         return self.async_show_form(
             step_id="user",
@@ -99,7 +97,7 @@ class MoesRelayHeatingOptionsFlow(config_entries.OptionsFlow):
         current = {**self._config_entry.data, **self._config_entry.options}
 
         if user_input is not None:
-            return self.async_create_entry(title="", data=user_input)
+            return self.async_create_entry(title="", data=_supported_data(user_input))
 
         return self.async_show_form(
             step_id="init",

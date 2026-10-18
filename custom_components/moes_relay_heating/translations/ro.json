@@ -4,15 +4,14 @@
     "step": {
       "user": {
         "title": "Adaugă zonă de încălzire",
-        "description": "Alege termostatul climate și releul care alimentează valva de încălzire.",
+        "description": "Alege termostatul climate folosit pentru raportarea cererii de căldură. Controlează comutatorul încălzirii prin automatizările tale.",
         "data": {
           "zone_name": "Nume zonă",
           "thermostat": "Termostat",
-          "relay": "Releu",
           "hysteresis": "Histerezis pornire"
         },
         "data_description": {
-          "hysteresis": "Releul pornește când temperatura curentă ajunge la TARGET minus această valoare. Se oprește când temperatura curentă ajunge la TARGET."
+          "hysteresis": "Cererea de căldură devine activă când temperatura curentă ajunge la TARGET minus această valoare. Devine inactivă când temperatura curentă ajunge la TARGET."
         }
       }
     },
@@ -27,7 +26,6 @@
         "data": {
           "zone_name": "Nume zonă",
           "thermostat": "Termostat",
-          "relay": "Releu",
           "hysteresis": "Histerezis pornire"
         }
       }

@@ -1,0 +1,28 @@
+{
+  "version": "0.0.2",
+  "baseline": "0.0.1",
+  "scope": "integration_only",
+  "tests_run": 16,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "success": true,
+  "installed_on_home_assistant": false,
+  "live_home_assistant_tested": false,
+  "entity_unique_ids_and_device_info_unchanged": true,
+  "heating_demand_calculation_unchanged": true,
+  "integration_setup_and_unload_unchanged": true,
+  "relay_configuration_fields": 0,
+  "relay_service_calls": 0,
+  "legacy_saved_relay_fields_ignored": true,
+  "changed_runtime_files": [
+    "binary_sensor.py",
+    "config_flow.py",
+    "const.py",
+    "controller.py",
+    "manifest.json",
+    "strings.json",
+    "translations/ro.json"
+  ],
+  "python": "3.11.9"
+}

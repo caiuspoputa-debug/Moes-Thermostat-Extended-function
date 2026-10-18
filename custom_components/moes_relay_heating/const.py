@@ -4,7 +4,6 @@ DOMAIN = "moes_relay_heating"
 
 CONF_ZONE_NAME = "zone_name"
 CONF_THERMOSTAT = "thermostat"
-CONF_RELAY = "relay"
 CONF_HYSTERESIS = "hysteresis"
 
 DEFAULT_HYSTERESIS = 1.0

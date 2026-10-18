@@ -62,12 +62,9 @@ class HeatDemandBinarySensor(BinarySensorEntity):
 
     @property
     def extra_state_attributes(self) -> dict:
-        relay_state = self.hass.states.get(self.controller.relay)
         return {
             "zone_name": self.controller.zone_name,
             "thermostat": self.controller.thermostat,
-            "relay": self.controller.relay,
-            "relay_state": None if relay_state is None else relay_state.state,
             "thermostat_mode": self.controller.thermostat_mode,
             "current_temperature": self.controller.current_temperature,
             "target_temperature": self.controller.target_temperature,
